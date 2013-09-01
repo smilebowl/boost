@@ -55,7 +55,7 @@
 			$this-><?php echo $currentModelName; ?>->create();
 			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlashInfo(__('The <?php echo strtolower($singularHumanName); ?> has been saved.' . "(#{$this-><?php echo $currentModelName; ?>->id})") );
+				$this->Session->setFlashInfo(__('The <?php echo strtolower($singularHumanName); ?> has been saved.') . "(#{$this-><?php echo $currentModelName; ?>->id})" );
 				$this->redirect(array('action' => 'index'));
 <?php else: ?>
 				$this->flash(__('<?php echo ucfirst(strtolower($currentModelName)); ?> saved.'), array('action' => 'index'));
@@ -98,7 +98,7 @@
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this-><?php echo $currentModelName; ?>->save($this->request->data)) {
 <?php if ($wannaUseSession): ?>
-				$this->Session->setFlashInfo(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'."(#$id)"));
+				$this->Session->setFlashInfo(__('The <?php echo strtolower($singularHumanName); ?> has been saved.') . "(#$id)");
 				$this->redirect(array('action' => 'index'));
 <?php else: ?>
 				$this->flash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), array('action' => 'index'));

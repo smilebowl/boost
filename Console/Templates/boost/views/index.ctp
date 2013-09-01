@@ -44,7 +44,7 @@
 	));
 	?>"; ?>
 	</p>
-	<?php echo "<?php echo \$this->Paginator->pagination(array('ul' => 'pagination')); ?>\n"; ?>
+	<?php echo "<?php echo \$this->Paginator->pagination(array('ul' => 'pagination', 'modulus'=>9)); ?>\n"; ?>
 
 	<table class="table table-striped table-hover table-condensed">
 	<tr>
