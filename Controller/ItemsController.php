@@ -49,7 +49,7 @@ class ItemsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Item->create();
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlashInfo(__('The item has been saved.' . "(#{$this->Item->id})") );
+				$this->Session->setFlashInfo(__('The item has been saved.') . "(#{$this->Item->id})" );
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlashError(__('The item could not be saved. Please, try again.') );
@@ -72,7 +72,7 @@ class ItemsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlashInfo(__('The item has been saved.'."(#$id)"));
+				$this->Session->setFlashInfo(__('The item has been saved.') . "(#$id)");
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlashError(__('The item could not be saved. Please, try again.'));
