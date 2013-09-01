@@ -190,14 +190,15 @@
 	Configure::write('Session', array(
 		'defaults' => 'php'
 	));
+	Configure::write('Session.cookie', 'boost');
 
 /**
  * A random string used in security hashing methods.
- */	Configure::write('Security.salt', '3d994fdcdf95dac18d9c30cff2b15a89bc837a4b');
+ */	Configure::write('Security.salt', '49a2dec16b9cdb55db32171d6ea328cd69d677be');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
- */	Configure::write('Security.cipherSeed', '306565373363666162643030633366');
+ */	Configure::write('Security.cipherSeed', '643535313037626263373333653532');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
@@ -238,6 +239,7 @@
  * any date & time related errors.
  */
 	//date_default_timezone_set('UTC');
+	date_default_timezone_set('Asia/Tokyo');
 
 /**
  *

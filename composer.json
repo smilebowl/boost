@@ -1,0 +1,7 @@
+{
+    "require": {
+        "slywalker/boost_cake": "dev-master",
+        "cakephp/debug_kit": "2.2.*",
+        "cakedc/search": "*"
+    }
+}

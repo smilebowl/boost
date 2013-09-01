@@ -1,0 +1,21 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body { 
+  font-family: "Helvetica Neue",Helvetica,Arial,"Meiryo UI", "メイリオ", sans-serif;
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+/* Reset the container for Non-responsive */
+.container {
+  max-width: none !important;
+  width: 870px;
+}
+
+.loginform {
+	margin: 0px auto;
+}

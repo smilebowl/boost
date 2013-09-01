@@ -4,25 +4,27 @@ App::uses('AppController', 'Controller');
  * Accesslogs Controller
  *
  * @property Accesslog $Accesslog
- * @property PaginatorComponent $Paginator
  */
 class AccesslogsController extends AppController {
 
-/**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator');
-
+	public $presetVars = true; // using the model configuration
+	public $components = array('Search.Prg');
+	 
+	public $paginate = array('order'=>'logged desc');
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
+		
+		$this->Prg->commonProcess();
+		$this->paginate['conditions'] = $this->Accesslog->parseCriteria($this->passedArgs);
+		
 		$this->Accesslog->recursive = 0;
-		$this->set('accesslogs', $this->Paginator->paginate());
+		$this->set('accesslogs', $this->paginate());
+		
+		$this->set('users', $this->Accesslog->User->find('list'));
 	}
 
 /**
@@ -45,14 +47,14 @@ class AccesslogsController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function _add() {
 		if ($this->request->is('post')) {
 			$this->Accesslog->create();
 			if ($this->Accesslog->save($this->request->data)) {
-				$this->Session->setFlash(__('The accesslog has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlashInfo(__('The accesslog has been saved.') );
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The accesslog could not be saved. Please, try again.'));
+				$this->Session->setFlashError(__('The accesslog could not be saved. Please, try again.') );
 			}
 		}
 		$users = $this->Accesslog->User->find('list');
@@ -66,16 +68,16 @@ class AccesslogsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function _edit($id = null) {
 		if (!$this->Accesslog->exists($id)) {
 			throw new NotFoundException(__('Invalid accesslog'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Accesslog->save($this->request->data)) {
-				$this->Session->setFlash(__('The accesslog has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlashInfo(__('The accesslog has been saved.'));
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The accesslog could not be saved. Please, try again.'));
+				$this->Session->setFlashError(__('The accesslog could not be saved. Please, try again.'));
 			}
 		} else {
 			$options = array('conditions' => array('Accesslog.' . $this->Accesslog->primaryKey => $id));
@@ -92,17 +94,17 @@ class AccesslogsController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function _delete($id = null) {
 		$this->Accesslog->id = $id;
 		if (!$this->Accesslog->exists()) {
 			throw new NotFoundException(__('Invalid accesslog'));
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Accesslog->delete()) {
-			$this->Session->setFlash(__('Accesslog deleted'));
-			return $this->redirect(array('action' => 'index'));
+			$this->Session->setFlashInfo(__('Accesslog deleted.'));
+			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Accesslog was not deleted'));
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlashError(__('Accesslog was not deleted'));
+		$this->redirect(array('action' => 'index'));
 	}
 }

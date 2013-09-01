@@ -4,10 +4,23 @@ App::uses('AppModel', 'Model');
  * User Model
  *
  * @property Accesslog $Accesslog
- * @property Item $Item
  */
 class User extends AppModel {
 
+	public $actsAs = array('SoftDelete');
+
+/**
+ * Display field
+ *
+ * @var string
+ */
+	public $displayField = 'username';
+
+
+	function __construct($id = false, $table = null, $ds = null) {
+	    parent::__construct($id, $table, $ds);
+	    $this->validate['role']['allowedChoice']['rule'][1] = Configure::read('Users.roles');
+	}
 /**
  * Validation rules
  *
@@ -23,10 +36,14 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+			'isUnique' => array(
+				'rule' => array('isUnique')
+			),
 		),
 		'password' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
+				'on' => 'create',
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -53,43 +70,31 @@ class User extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+            'allowedChoice' => array(
+                'rule' => array('inList',array()),  // __constructでセット
+                'message' => 'Invalid role',
+            ),		
+		),
+		'deleted' => array(
+			'numeric' => array(
+				'rule' => array('numeric'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
 		),
 	);
 
-	//The Associations below have been created with all possible keys, those that are not needed can be removed
-
-/**
- * hasMany associations
- *
- * @var array
- */
-	public $hasMany = array(
-		'Accesslog' => array(
-			'className' => 'Accesslog',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		),
-		'Item' => array(
-			'className' => 'Item',
-			'foreignKey' => 'user_id',
-			'dependent' => false,
-			'conditions' => '',
-			'fields' => '',
-			'order' => '',
-			'limit' => '',
-			'offset' => '',
-			'exclusive' => '',
-			'finderQuery' => '',
-			'counterQuery' => ''
-		)
-	);
+	/**
+	 * hashed password
+	 */
+	public function beforeSave($options = array()) {
+		if (isset($this->data[$this->alias]['password'])) {
+			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+		}
+		return true;
+    }
 
 }

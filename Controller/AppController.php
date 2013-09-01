@@ -33,4 +33,36 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+
+    public $uses = array('Accesslog');
+	
+	// public $layout = 'bootstrap';
+
+	public $components = array(
+	   'Session' => array('className'=>'SessionEx'),
+	   'Auth' => array(
+            'loginRedirect' => array('controller' => 'users', 'action' => 'index'),
+            'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
+			// 'authorize' => array('Controller')
+		),
+	   'Logging' => array('actions'=>array('add','edit','view','delete','login','logout')),
+	   'DebugKit.Toolbar',
+	);
+
+	public $helpers = array(
+		'Session',
+		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
+		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
+		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
+		'Icon' => array('icon-white' => true),
+	);
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+//		 $this->Auth->allow(); // 2.1 later
+	}
+
+	public function beforeRender() {
+		$this -> layout = 'bootstrap';
+	}
 }

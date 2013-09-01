@@ -22,7 +22,7 @@ class ItemsController extends AppController {
  */
 	public function index() {
 		$this->Item->recursive = 0;
-		$this->set('items', $this->Paginator->paginate());
+		$this->set('items', $this->paginate());
 	}
 
 /**
@@ -49,10 +49,10 @@ class ItemsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Item->create();
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlash(__('The item has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlashInfo(__('The item has been saved.' . "(#{$this->Item->id})") );
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));
+				$this->Session->setFlashError(__('The item could not be saved. Please, try again.') );
 			}
 		}
 		$users = $this->Item->User->find('list');
@@ -72,10 +72,10 @@ class ItemsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Item->save($this->request->data)) {
-				$this->Session->setFlash(__('The item has been saved'));
-				return $this->redirect(array('action' => 'index'));
+				$this->Session->setFlashInfo(__('The item has been saved.'."(#$id)"));
+				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The item could not be saved. Please, try again.'));
+				$this->Session->setFlashError(__('The item could not be saved. Please, try again.'));
 			}
 		} else {
 			$options = array('conditions' => array('Item.' . $this->Item->primaryKey => $id));
@@ -99,10 +99,10 @@ class ItemsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Item->delete()) {
-			$this->Session->setFlash(__('Item deleted'));
-			return $this->redirect(array('action' => 'index'));
+			$this->Session->setFlashInfo(__('Item deleted.'));
+			$this->redirect(array('action' => 'index'));
 		}
-		$this->Session->setFlash(__('Item was not deleted'));
-		return $this->redirect(array('action' => 'index'));
+		$this->Session->setFlashError(__('Item was not deleted'));
+		$this->redirect(array('action' => 'index'));
 	}
 }
