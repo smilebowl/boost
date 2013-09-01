@@ -1,0 +1,374 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-09-01 19:58+0900\n"
+"PO-Revision-Date: 2013-09-01 20:00+0900\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: Controller/AccesslogsController.php:39;73;100
+msgid "Invalid accesslog"
+msgstr "無効です"
+
+#: Controller/AccesslogsController.php:54;77
+msgid "The accesslog has been saved."
+msgstr "保存しました"
+
+#: Controller/AccesslogsController.php:57;80
+msgid "The accesslog could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/AccesslogsController.php:104
+msgid "Accesslog deleted."
+msgstr "削除しました"
+
+#: Controller/AccesslogsController.php:107
+msgid "Accesslog was not deleted"
+msgstr ""
+
+#: Controller/ItemsController.php:37;71;98
+msgid "Invalid item"
+msgstr "無効です"
+
+#: Controller/ItemsController.php:52;75
+msgid "The item has been saved."
+msgstr "保存しました"
+
+#: Controller/ItemsController.php:55;78
+msgid "The item could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ItemsController.php:102
+msgid "Item deleted."
+msgstr "削除しました"
+
+#: Controller/ItemsController.php:105
+msgid "Item was not deleted"
+msgstr ""
+
+#: Controller/UsersController.php:28
+msgid "Invalid username or password, try again"
+msgstr ""
+
+#: Controller/UsersController.php:62;98;132
+msgid "Invalid user"
+msgstr "無効です"
+
+#: Controller/UsersController.php:75;101;135
+msgid "Permission denied."
+msgstr "権限がありません。"
+
+#: Controller/UsersController.php:80;110
+msgid "The user has been saved."
+msgstr "保存しました"
+
+#: Controller/UsersController.php:83;113
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:140
+msgid "User deleted."
+msgstr "削除しました"
+
+#: Controller/UsersController.php:143
+msgid "User was not deleted"
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:18
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:27
+msgid "Alert notice message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:30;41
+msgid "Alert success message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:34
+msgid "Alert error message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:45
+msgid "Alert info message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:49
+msgid "Alert warning message testing..."
+msgstr ""
+
+#: Plugin/BoostCake/Controller/BoostCakeController.php:53
+msgid "Alert danger message testing..."
+msgstr ""
+
+#: View/Accesslogs/add.ctp:4 View/Accesslogs/edit.ctp:5
+#: View/Accesslogs/view.ctp:3
+msgid "List Accesslogs"
+msgstr "アクセス一覧"
+
+#: View/Accesslogs/add.ctp:5 View/Accesslogs/edit.ctp:6 View/Items/add.ctp:5
+#: View/Items/edit.ctp:6 View/Items/index.ctp:4 View/Items/view.ctp:7
+#: View/Users/add.ctp:4 View/Users/edit.ctp:17 View/Users/view.ctp:5
+msgid "List Users"
+msgstr "ユーザ一覧"
+
+#: View/Accesslogs/add.ctp:6 View/Accesslogs/edit.ctp:7 View/Items/add.ctp:6
+#: View/Items/edit.ctp:7 View/Items/index.ctp:5 View/Items/view.ctp:8
+#: View/Users/index.ctp:3 View/Users/view.ctp:6
+msgid "New User"
+msgstr "ユーザ追加"
+
+#: View/Accesslogs/add.ctp:19
+#, fuzzy
+msgid "Add Accesslog"
+msgstr "アクセスログ"
+
+#: View/Accesslogs/add.ctp:29 View/Accesslogs/edit.ctp:31
+#: View/Items/add.ctp:29 View/Items/edit.ctp:31 View/Users/add.ctp:26
+#: View/Users/edit.ctp:41
+msgid "Submit"
+msgstr "更新"
+
+#: View/Accesslogs/edit.ctp:4 View/Helper/IconHelper.php:37;40
+#: View/Items/edit.ctp:4 View/Items/index.ctp:36 View/Users/edit.ctp:16
+#: View/Users/index.ctp:27
+msgid "Delete"
+msgstr "削除"
+
+#: View/Accesslogs/edit.ctp:4 View/Items/edit.ctp:4 View/Items/index.ctp:36
+#: View/Items/view.ctp:4 View/Users/edit.ctp:16 View/Users/index.ctp:27
+#: View/Users/view.ctp:4
+msgid "Are you sure you want to delete # %s?"
+msgstr "本当に #%s を削除しますか？"
+
+#: View/Accesslogs/edit.ctp:20
+#, fuzzy
+msgid "Edit Accesslog"
+msgstr "アクセス一覧"
+
+#: View/Accesslogs/index.ctp:16
+msgid "Accesslogs"
+msgstr "アクセスログ"
+
+#: View/Accesslogs/index.ctp:35;41 View/Accesslogs/view.ctp:14
+msgid "Logged"
+msgstr "記録日"
+
+#: View/Accesslogs/index.ctp:45 View/Accesslogs/view.ctp:19
+msgid "Controllername"
+msgstr "コントローラ"
+
+#: View/Accesslogs/index.ctp:49 View/Accesslogs/view.ctp:24
+msgid "Actionname"
+msgstr "アクション"
+
+#: View/Accesslogs/index.ctp:52
+msgid "Condition"
+msgstr "条件..."
+
+#: View/Accesslogs/index.ctp:55 View/Accesslogs/view.ctp:29
+#: View/Items/view.ctp:34 View/Users/view.ctp:10
+msgid "User"
+msgstr "ユーザ"
+
+#: View/Accesslogs/index.ctp:60
+msgid "param"
+msgstr "データ"
+
+#: View/Accesslogs/index.ctp:63
+msgid "Search"
+msgstr "検索"
+
+#: View/Accesslogs/index.ctp:74 View/Items/index.ctp:14
+#: View/Users/index.ctp:42
+msgid ""
+"Page {:page} of {:pages}, showing {:current} records out of {:count} total, "
+"starting on record {:start}, ending on {:end}"
+msgstr "全 {:count} 件、ページ ： {:page} / {:pages} "
+
+#: View/Accesslogs/index.ctp:81 View/Items/index.ctp:21
+#: View/Users/index.ctp:10
+msgid "Actions"
+msgstr ""
+
+#: View/Accesslogs/index.ctp:93 View/Helper/IconHelper.php:20;24
+#: View/Items/index.ctp:34 View/Users/index.ctp:24
+msgid "View"
+msgstr "詳細"
+
+#: View/Accesslogs/view.ctp:7
+msgid "Accesslog"
+msgstr "アクセスログ"
+
+#: View/Accesslogs/view.ctp:9 View/Items/view.ctp:14 View/Users/view.ctp:12
+msgid "Id"
+msgstr "ID"
+
+#: View/Accesslogs/view.ctp:34
+msgid "Url"
+msgstr "URL"
+
+#: View/Accesslogs/view.ctp:39
+msgid "Param"
+msgstr "データ"
+
+#: View/Elements/menu.ctp:9
+msgid "CakePHP"
+msgstr ""
+
+#: View/Elements/menu.ctp:17 View/Items/index.ctp:9
+msgid "Items"
+msgstr "アイテム"
+
+#: View/Elements/menu.ctp:19 View/Users/index.ctp:7
+msgid "Users"
+msgstr "ユーザ"
+
+#: View/Elements/menu.ctp:21
+msgid "AccessLogs"
+msgstr "アクセスログ"
+
+#: View/Elements/menu.ctp:27
+msgid "Logout"
+msgstr "ログアウト"
+
+#: View/Helper/IconHelper.php:26;29 View/Items/index.ctp:35
+#: View/Users/index.ctp:26
+msgid "Edit"
+msgstr "編集"
+
+#: View/Items/add.ctp:4 View/Items/edit.ctp:5 View/Items/view.ctp:5
+msgid "List Items"
+msgstr "アイテム一覧"
+
+#: View/Items/add.ctp:20
+msgid "Add Item"
+msgstr "アイテム追加"
+
+#: View/Items/add.ctp:22 View/Items/edit.ctp:24 View/Users/add.ctp:20;21;22;23
+#: View/Users/edit.ctp:34;37;38
+msgid "Required"
+msgstr "必須"
+
+#: View/Items/edit.ctp:21 View/Items/view.ctp:3
+msgid "Edit Item"
+msgstr "アイテム編集"
+
+#: View/Items/index.ctp:3 View/Items/view.ctp:6
+msgid "New Item"
+msgstr "アイテム追加"
+
+#: View/Items/view.ctp:4
+msgid "Delete Item"
+msgstr "アイテム削除"
+
+#: View/Items/view.ctp:12
+msgid "Item"
+msgstr "アイテム"
+
+#: View/Items/view.ctp:19
+msgid "Title"
+msgstr "タイトル"
+
+#: View/Items/view.ctp:24
+msgid "Age"
+msgstr "年齢"
+
+#: View/Items/view.ctp:29
+msgid "Tel"
+msgstr "電話番号"
+
+#: View/Items/view.ctp:39
+msgid "Description"
+msgstr "詳細"
+
+#: View/Items/view.ctp:44 View/Users/view.ctp:32
+msgid "Created"
+msgstr "作成日"
+
+#: View/Items/view.ctp:49 View/Users/view.ctp:37
+msgid "Modified"
+msgstr "変更日"
+
+#: View/Layouts/bootstrap.ctp:6
+msgid "CakePHP: Boost:"
+msgstr ""
+
+#: View/Users/add.ctp:18
+msgid "Add User"
+msgstr "ユーザ追加"
+
+#: View/Users/edit.ctp:31 View/Users/view.ctp:3
+msgid "Edit User"
+msgstr "ユーザ編集"
+
+#: View/Users/edit.ctp:35;36
+msgid "Required to change"
+msgstr "変更時は必須"
+
+#: View/Users/login.ctp:8;30
+msgid "Login"
+msgstr "ログイン"
+
+#: View/Users/login.ctp:22
+msgid "Please enter your username and password."
+msgstr ""
+
+#: View/Users/login.ctp:26
+msgid "Password"
+msgstr "パスワード"
+
+#: View/Users/view.ctp:4
+msgid "Delete User"
+msgstr "ユーザ削除"
+
+#: View/Users/view.ctp:17
+msgid "Username"
+msgstr "ユーザ"
+
+#: View/Users/view.ctp:22
+msgid "Displayname"
+msgstr "氏名"
+
+#: View/Users/view.ctp:27
+msgid "Role"
+msgstr "ロール"
+
+#: View/Users/view.ctp:42
+msgid "Deleted"
+msgstr "削除フラグ"
+
+#: View/Users/view.ctp:47
+msgid "Deleted Date"
+msgstr "削除日"
+
+#: Model/Item.php:validation for field title Model/User.php:validation
+#: username;validation password;validation displayname;validation role
+msgid "notempty"
+msgstr "空白です"
+
+#: Model/User.php:validation for field username
+msgid "isUnique"
+msgstr "ユニークではありません"
+
+#: Model/User.php:validation for field role
+msgid "Invalid role"
+msgstr "無効なロールです"
+
+#: Model/User.php:validation for field deleted
+msgid "numeric"
+msgstr "数字ではありません"
+
+#~ msgid "Flag"
+#~ msgstr "フラグ"
+
+#~ msgid "Comfirm"
+#~ msgstr "再入力"
