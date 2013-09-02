@@ -99,7 +99,7 @@ class ItemsController extends AppController {
 		}
 		$this->request->onlyAllow('post', 'delete');
 		if ($this->Item->delete()) {
-			$this->Session->setFlashInfo(__('Item deleted.'));
+			$this->Session->setFlashInfo(__('Item deleted.')."(#$id)");
 			$this->redirect(array('action' => 'index'));
 		}
 		$this->Session->setFlashError(__('Item was not deleted'));

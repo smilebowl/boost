@@ -144,7 +144,7 @@
 		$this->request->onlyAllow('post', 'delete');
 		if ($this-><?php echo $currentModelName; ?>->delete()) {
 <?php if ($wannaUseSession): ?>
-			$this->Session->setFlashInfo(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> deleted.'));
+			$this->Session->setFlashInfo(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> deleted.')."(#$id)");
 			$this->redirect(array('action' => 'index'));
 <?php else: ?>
 			$this->flash(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> deleted'), array('action' => 'index'));

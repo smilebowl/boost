@@ -15,7 +15,8 @@
 			'class' => 'col col-xs-2 control-label'),
 		'wrapInput' => 'col col-xs-5',
 		'class' => 'form-control'),
-	'class' => 'well form-horizontal'
+	'class' => 'well form-horizontal',
+	'novalidate' => true
 	)); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Item'); ?></legend>

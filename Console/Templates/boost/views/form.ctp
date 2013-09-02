@@ -46,7 +46,8 @@
 	echo "\t\t\t'class' => 'col col-xs-2 control-label'),\n";
 	echo "\t\t'wrapInput' => 'col col-xs-5',\n";
 	echo "\t\t'class' => 'form-control'),\n";
-	echo "\t'class' => 'well form-horizontal'\n";
+	echo "\t'class' => 'well form-horizontal',\n";
+	echo "\t'novalidate' => true\n";
 	echo "\t)); ?>\n";
 ?>
 	<fieldset>
