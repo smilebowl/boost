@@ -1,7 +1,28 @@
 {
     "require": {
-        "slywalker/boost_cake": "dev-master",
-        "cakephp/debug_kit": "2.2.*",
-        "cakedc/search": "*"
-    }
+        "slywalker/boost_cake": "dev-master"
+        ,"cakephp/debug_kit": "2.2.*"
+        ,"cakedc/search": "*"
+        ,"jquery/jquery": "1.9.*"
+        ,"twitter/bootstrap": "3.*"
+    },
+
+    "scripts" : {
+        "post-update-cmd" : [
+            "mv Vendor/jquery/jquery/*.js webroot/js/vendor/",
+            "rm -rf Vendor/jquery"
+        ]
+    },
+
+	"repositories": [{
+		"type": "package",
+		"package": {
+			"name": "jquery/jquery",
+			"version": "1.9.1",
+			"dist": {
+			"url": "http://code.jquery.com/jquery-1.9.1.min.js",
+			"type": "file"
+			}
+		}
+	}]
 }
