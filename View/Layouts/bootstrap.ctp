@@ -27,7 +27,7 @@
 	echo $this->fetch('meta');
 	echo $this->fetch('css');
 	?>
-    <?php echo $this->Html->script('vendor/jquery-1.10.1.min'); ?>
+    <?php echo $this->Html->script('vendor/jquery-1.9.1.min'); ?>
     <?php echo $this->Html->script('vendor/bootstrap.min'); ?>
     <?php echo $this->Html->script('main'); ?>
     <?php echo $this->fetch('script'); ?>

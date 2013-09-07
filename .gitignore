@@ -1,5 +1,5 @@
 tmp/cache/
 tmp/logs/
-Vendor/
+Vendor/*
 Locale/*.*
 composer.lock
