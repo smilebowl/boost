@@ -33,8 +33,14 @@ $(function(){
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('username', array('autocomplete'=>'off', 'afterInput'=>'<span class="help-block"><span class="label label-warning">'.__('Required').'</span></span>'));
-		echo $this->Form->input('password', array('value'=>'','afterInput'=>'<span class="help-inline"><span class="label label-info">'.__('Required to change').'</span></span>'));
-		echo $this->Form->input('comfirm', array('type'=>'password', 'value'=>'', 'afterInput'=>'<span class="help-inline"><span class="label label-info">'.__('Required to change').'</span></span>'));
+		echo $this->Form->input('password', array('value'=>'',
+					'afterInput'=>'<span class="help-inline"><span class="label label-info">'.__('Required to change').'</span></span>',
+					'placeholder'=>'変更時のみ入力'
+					));
+		echo $this->Form->input('comfirm', array('type'=>'password', 'value'=>'',
+					'afterInput'=>'<span class="help-inline"><span class="label label-info">'.__('Required to change').'</span></span>',
+					'placeholder'=>'変更時のみ入力'
+					));
 		echo $this->Form->input('displayname', array('afterInput'=>'<span class="help-block"><span class="label label-warning">'.__('Required').'</span></span>'));
 		echo $this->Form->input('role', array('afterInput'=>'<span class="help-block"><span class="label label-warning">'.__('Required').'</span></span>'));
 	?>
